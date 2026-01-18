@@ -5,10 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDX Sitters</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* --- CUTE LOADING OVERLAY STYLES --- */
+        #loading-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 10000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .loader-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: crawl 2.5s infinite linear;
+            display: inline-block;
+        }
+
+        /* The Animation: Side to side "wobble" and slide */
+        @keyframes crawl {
+            0% { transform: translateX(-50px) rotate(-10deg); }
+            50% { transform: translateX(50px) rotate(10deg); }
+            100% { transform: translateX(-50px) rotate(-10deg); }
+        }
+
+        .loading-text {
+            color: #9333ea;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-purple-100">
     
-    <!-- Header -->
+    <div id="loading-overlay">
+        <div class="loader-icon">🐕</div> 
+        <div class="loading-text">
+            Our sitter is on their way!<br>
+            <span class="text-sm font-normal text-gray-500">(Waking up the server, please wait ~30 seconds)</span>
+        </div>
+    </div>
+
     <header class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-purple-600">PDX Sitters</h1>
@@ -20,7 +67,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="py-20 text-center">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-5xl font-bold text-gray-800 mb-6">Trusted Childcare & Pet Care in Portland</h2>
@@ -29,21 +75,15 @@
         </div>
     </section>
 
-    <!-- Sitters Section -->
     <section id="sitters" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Trusted Sitters</h2>
-            
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Sitter 1 -->
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
                     <img src="images/jenny.jpg" alt="Jenny" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Jenny Eng</h3>
-                        <div class="flex items-center mb-3">
-                            <span class="text-yellow-400">★★★★★</span>
-                            <span class="ml-2 text-gray-600">(2 reviews)</span>
-                        </div>
+                        <div class="flex items-center mb-3"><span class="text-yellow-400">★★★★★</span><span class="ml-2 text-gray-600">(2 reviews)</span></div>
                         <div class="mb-3">
                             <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm mr-2">Babysitting</span>
                             <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Pet/House Sitting</span>
@@ -56,21 +96,16 @@
                     </div>
                 </div>
 
-                <!-- Sitter 2 -->
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
                     <img src="images/sierra.jpg" alt="Sierra" class="w-full h-64 object-cover" style="object-position: 50% 25%;">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Sierra Miller</h3>
-                        <div class="flex items-center mb-3">
-                            <span class="text-yellow-400">★★★★★</span>
-                            <span class="ml-2 text-gray-600">(2 reviews)</span>
-                        </div>
+                        <div class="flex items-center mb-3"><span class="text-yellow-400">★★★★★</span><span class="ml-2 text-gray-600">(2 reviews)</span></div>
                         <div class="mb-3">
                             <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Babysitting</span>
-                            <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Pet/House Sitting</span>
                             <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Dog Walking</span>
                         </div>
-                        <p class="text-gray-600 mb-4">15-year old sophomore with 4.0 GPA; National Honor Society, Jefferson Dancer, member of Human Rights Club, Student Health Action Council and On Track OHSU. Big sister experienced with babies and toddlers. Loves dogs and cats. </p>
+                        <p class="text-gray-600 mb-4">15-year old sophomore with 4.0 GPA. Big sister experienced with babies and toddlers. Loves dogs and cats.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-lg font-bold text-purple-600">$13-18/hour</span>
                             <a href="#book" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">Book</a>
@@ -78,22 +113,14 @@
                     </div>
                 </div>
 
-                <!-- Sitter 3 -->
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
                     <img src="images/elliot.jpg" alt="Elliot" class="w-full h-64 object-cover" style="object-position: 50% 10%;">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Elliot Gray</h3>
-                        <div class="flex items-center mb-3">
-                            <span class="text-yellow-400">★★★★★</span>
-                            <span class="ml-2 text-gray-600">(2 reviews)</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm mr-2">Babysitting</span>
-                            
-                        </div>
+                        <div class="flex items-center mb-3"><span class="text-yellow-400">★★★★★</span><span class="ml-2 text-gray-600">(2 reviews)</span></div>
                         <p class="text-gray-600 mb-4">Super dad. Available select weekdays and school holidays for backup care.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-purple-600">$50/80 per half/full day</span>
+                            <span class="text-lg font-bold text-purple-600">$50-80/day</span>
                             <a href="#book" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">Book</a>
                         </div>
                     </div>
@@ -102,7 +129,6 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
     <section id="book" class="py-16">
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-lg p-8">
@@ -112,9 +138,9 @@
                         <label class="block text-sm font-semibold mb-2">Select Sitter *</label>
                         <select id="sitter" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
                             <option value="">Choose a sitter...</option>
-                            <option value="Jenny Eng">Jenny Eng - Babysitting, Pet Sitting</option>
-                            <option value="Sierra Miller">Sierra Miller - Babysitting, Pet Sitting, Dog Walking</option>
-                            <option value="Elliot Gray">Elliot Gray - Babysitting</option>
+                            <option value="Jenny Eng">Jenny Eng</option>
+                            <option value="Sierra Miller">Sierra Miller</option>
+                            <option value="Elliot Gray">Elliot Gray</option>
                         </select>
                     </div>
 
@@ -140,11 +166,11 @@
                             <input type="date" id="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">Start Time *</label>
+                            <label class="block text-sm font-semibold mb-2">Start *</label>
                             <input type="time" id="startTime" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">End Time *</label>
+                            <label class="block text-sm font-semibold mb-2">End *</label>
                             <input type="time" id="endTime" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
                         </div>
                     </div>
@@ -154,7 +180,6 @@
                         <textarea id="notes" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg" placeholder="Any special requirements..."></textarea>
                     </div>
 
-
                     <button onclick="submitBooking()" class="w-full bg-purple-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition">
                         Submit Booking Request
                     </button>
@@ -163,16 +188,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center">
         <p>&copy; 2026 PDX Sitters. All rights reserved.</p>
-        <p class="text-gray-400 text-sm mt-2">Trusted childcare and pet care in Portland, OR</p>
     </footer>
+
     <script>
-		// Change this from localhost to your new Render URL
-		const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
+        const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
+
         async function submitBooking() {
-            // 1. Get elements safely
+            // 1. Get values
             const sitter = document.getElementById('sitter').value;
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -188,48 +212,32 @@
                 return;
             }
 
-            const bookingData = {
-                sitter,
-                name,
-                email,
-                phone,
-                date,
-                startTime,
-                endTime,
-                service: 'babysitting',
-                notes
-            };
-
-            const submitBtn = document.querySelector('button[onclick="submitBooking()"]');
+            // 3. SHOW CUTE LOADER
+            const overlay = document.getElementById('loading-overlay');
+            overlay.style.display = 'flex';
 
             try {
-                // You already have this logic! 
-				submitBtn.disabled = true;
-				submitBtn.textContent = 'Booking your trusted sitter... please wait (up to 1 min)';
-
                 const response = await fetch(`${API_URL}/bookings`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(bookingData)
+                    body: JSON.stringify({ sitter, name, email, phone, date, startTime, endTime, notes })
                 });
 
                 if (response.ok) {
-                    alert('Booking request submitted successfully!');
-                    // Clear form
-                    document.querySelectorAll('#bookingForm input, #bookingForm select, #bookingForm textarea').forEach(el => el.value = '');
-                    loadBookings();
+                    alert('✅ Booking request submitted! Check your calendar and email.');
+                    // Reset form
+                    document.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
                 } else {
-                    const result = await response.json();
-                    alert('Error: ' + (result.error || 'Failed to submit booking'));
+                    alert('❌ The sitter couldn\'t hear you. Please try again.');
                 }
             } catch (error) {
                 console.error('Connection Error:', error);
-                alert('Connection failed. Is your backend running at ' + API_URL + '?');
+                alert('❌ Connection failed. Your sitter is taking a nap (Server is down).');
             } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Booking Request';
+                // 4. HIDE CUTE LOADER
+                overlay.style.display = 'none';
             }
         }
-
     </script>
-</body> </html>
+</body>
+</html>
