@@ -256,9 +256,13 @@
                     bookingsSection.classList.remove('hidden');
                     bookingsList.innerHTML = bookings.map(b => `
                         <div class="border border-gray-200 rounded-lg p-4 mb-4">
-                            <h4 class="font-bold">${b.name || b.client_name}</h4>
-                            <p class="text-sm text-gray-600">Sitter: ${b.sitter}</p>
-                            <p class="text-sm text-gray-600">📅 ${b.date}</p>
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">${b.client_name}</h4>
+                                <button onclick="deleteBooking(${b.id})" class="text-red-500">Delete</button>
+                            </div>
+                            <p>Sitter: ${b.sitter_name}</p>
+                            <p>Date: ${b.service_date}</p>
+                            <p class="text-sm italic">${b.notes || ''}</p>
                         </div>
                     `).join('');
                 }
