@@ -182,8 +182,9 @@
     </footer>
     <script>
         // Use a fallback to prevent the whole script from breaking if the API is down
-        const API_URL = 'http://localhost:5000/api';
-
+        //const API_URL = 'http://localhost:5000/api';
+		// Change this from localhost to your new Render URL
+		const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
         async function submitBooking() {
             // 1. Get elements safely
             const sitter = document.getElementById('sitter').value;
