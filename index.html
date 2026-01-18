@@ -230,34 +230,5 @@
             }
         }
 
-        async function loadBookings() {
-            try {
-                const response = await fetch(`${API_URL}/bookings`);
-                if (!response.ok) return;
-                const bookings = await response.json();
-                
-                const bookingsList = document.getElementById('bookingsList');
-                const bookingsSection = document.getElementById('bookings');
-
-                if (bookings && bookings.length > 0) {
-                    bookingsSection.classList.remove('hidden');
-                    bookingsList.innerHTML = bookings.map(b => `
-                        <div class="border border-gray-200 rounded-lg p-4 mb-4">
-                            <div class="flex justify-between">
-                                <h4 class="font-bold">${b.client_name}</h4>
-                                <button onclick="deleteBooking(${b.id})" class="text-red-500">Delete</button>
-                            </div>
-                            <p>Sitter: ${b.sitter_name}</p>
-                            <p>Date: ${b.service_date}</p>
-                            <p class="text-sm italic">${b.notes || ''}</p>
-                        </div>
-                    `).join('');
-                }
-            } catch (e) {
-                console.log("Backend offline, skipping load.");
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', loadBookings);
     </script>
 </body> </html>
