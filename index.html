@@ -205,7 +205,7 @@
             try {
                 // You already have this logic! 
 				submitBtn.disabled = true;
-				submitBtn.textContent = 'Waking up server... please wait (up to 1 min)';
+				submitBtn.textContent = 'Booking your trusted sitter... please wait (up to 1 min)';
 
                 const response = await fetch(`${API_URL}/bookings`, {
                     method: 'POST',
