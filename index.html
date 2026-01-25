@@ -53,52 +53,50 @@
 			padding: 20px;
 		}
 		
-		/* Individual Sitter Card */
+		/* Sitter Card Container */
 		.sitter-card {
 			background: white;
 			border-radius: 16px;
 			overflow: hidden;
-			border: 1px solid #f0f0f0;
-			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			border: 1px solid #e2e8f0;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 			max-width: 400px;
+			margin: 20px auto;
 		}
 		
-		/* Photo Area */
-		.sitter-header {
+		/* The Large Hero Photo */
+		.sitter-hero-img {
+			width: 100%;
+			height: 256px; /* h-64 equivalent */
+			object-fit: cover;
+			object-position: 50% 25%;
+		}
+		
+		/* Section Spacing */
+		.sitter-content {
+			padding: 24px;
+		}
+		
+		/* Star Rating Style */
+		.star-rating {
 			display: flex;
 			align-items: center;
-			padding: 20px;
-			background: #fafafa;
+			margin-bottom: 12px;
 		}
 		
-		.sitter-photo {
-			width: 80px;
-			height: 80px;
-			border-radius: 50%;
-			object-fit: cover;
-			border: 3px solid #fff;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-			margin-right: 15px;
+		.stars {
+			color: #fbbf24; /* text-yellow-400 */
+			font-size: 1.2rem;
+			letter-spacing: 2px;
 		}
-
-		/* Review Section */
-		.review-box {
-			background: #fdf2ff;
-			border-left: 4px solid #a855f7;
-			padding: 12px;
-			margin-top: 15px;
-			font-style: italic;
+		
+		.review-count {
+			margin-left: 8px;
+			color: #4b5563; /* text-gray-600 */
 			font-size: 0.9rem;
 		}
-		
-		.reviewer-name {
-			display: block;
-			margin-top: 5px;
-			font-weight: bold;
-			font-style: normal;
-			font-size: 0.8rem;
-			color: #6b21a8;
-		}
+				
+
 		
 		/* Keep your Purple Badges */
 		.badge-purple {
@@ -226,8 +224,55 @@
     <section id="sitters" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Trusted Sitters</h2>
+<div class="sitter-card">
+    <img src="images/jenny.jpg" alt="Jenny" class="sitter-hero-img">
 
-			<div class="sitter-card">
+    <div class="sitter-content">
+        <h3 style="margin:0 0 4px 0; font-size: 1.5rem; color: #1f2937;">Dr. Jenny Eng, PhD</h3>
+        <p style="margin:0 0 12px 0; color: #6b7280; font-weight: 500;">Postdoctoral Researcher</p>
+
+        <div class="star-rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(2 reviews)</span>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <span class="badge-purple">CPR Certified</span>
+            <span class="badge-purple">STEM Tutoring</span>
+            <span class="badge-purple">Infant Qualified</span>
+        </div>
+
+        <div class="sitter-section">
+            <h4>Preferences</h4>
+            <div class="pref-grid">
+                <div class="pref-item"><span class="pref-icon">👶</span><span><strong>Ages:</strong> 0-12 yrs</span></div>
+                <div class="pref-item"><span class="pref-icon">🚗</span><span><strong>Dist:</strong> &lt; 10 mi</span></div>
+                <div class="pref-item"><span class="pref-icon">📍</span><span><strong>Area:</strong> NE/SE PDX</span></div>
+                <div class="pref-item"><span class="pref-icon">⏳</span><span><strong>Min:</strong> 3 Hours</span></div>
+            </div>
+        </div>
+
+        <div class="sitter-section">
+            <h4>About Me</h4>
+            <p style="font-size: 0.95rem; line-height: 1.5; color: #4b5563;">
+                Specializing in developmental care and academic mentorship. I provide high-level supervision that prioritizes educational engagement and safety.
+            </p>
+        </div>
+
+        <div class="sitter-section">
+            <h4>Rate Tiers</h4>
+            <div class="price-tier">
+                <span class="label">Active Care</span>
+                <span class="amount">$25/hr</span>
+            </div>
+            <div class="price-tier">
+                <span class="label">Evening (After Bedtime)</span>
+                <span class="amount">$15/hr</span>
+            </div>
+        </div>
+    </div>
+</div>
+		<!-->	<div class="sitter-card">
 				<div class="sitter-header">
 					<img src="images/jenny.jpg" alt="Dr. Jenny Eng" class="sitter-photo">
 					<div>
@@ -279,11 +324,12 @@
 					</div>
 			
 					<div class="sitter-section">
-						<h4>Parent Reviews</h4>
+						<h4>Reviews</h4>
+						<div class="flex items-center mb-3"><span class="text-yellow-400">★★★★★</span><span class="ml-2 text-gray-600">(2 reviews)</span></div>
 						<div class="review-box">
 							"Jenny is incredible. She didn't just watch our kids; she taught them about a biology project."
 							<span class="reviewer-name">— Sarah M., NE Portland</span>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
