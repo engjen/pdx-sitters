@@ -44,6 +44,90 @@
             font-size: 1.2rem;
             line-height: 1.5;
         }
+        /* Container for all sitters */
+		.sitter-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: center;
+			padding: 20px;
+		}
+		
+		/* Individual Sitter Card */
+		.sitter-card {
+			background: white;
+			border: 1px solid #e1e4e8;
+			border-radius: 12px;
+			width: 320px;
+			padding: 20px;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+			transition: transform 0.2s;
+		}
+		
+		.sitter-card:hover {
+			transform: translateY(-5px);
+		}
+		
+		/* Header & Badges */
+		.sitter-card h3 {
+			margin: 0 0 10px 0;
+			color: #2c3e50;
+			font-size: 1.4rem;
+		}
+		
+		.badge {
+			display: inline-block;
+			background: #e8f4fd;
+			color: #2b6cb0;
+			font-size: 0.75rem;
+			font-weight: bold;
+			padding: 4px 10px;
+			border-radius: 20px;
+			margin-right: 5px;
+			margin-bottom: 10px;
+		}
+		
+		/* Sections */
+		.sitter-section {
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px solid #f0f0f0;
+		}
+		
+		.sitter-section h4 {
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			color: #718096;
+			margin-bottom: 8px;
+			letter-spacing: 0.05em;
+		}
+		
+		.sitter-section ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			font-size: 0.95rem;
+		}
+		
+		/* Pricing Tiers */
+		.price-tier {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 8px 0;
+			border-bottom: 1px dashed #edf2f7;
+		}
+		
+		.price-tier:last-child { border-bottom: none; }
+		
+		.price-tier span.label { color: #4a5568; }
+		.price-tier span.amount { 
+			font-weight: bold; 
+			color: #2d3748; 
+			background: #f7fafc;
+			padding: 2px 8px;
+			border-radius: 4px;
+		}
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-purple-100">
@@ -95,8 +179,39 @@
     <section id="sitters" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Trusted Sitters</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-            
+
+            <div class="sitter-card">
+		<h3>Dr. Jenny Eng, PhD</h3>
+		<div class="sitter-badges">
+			<span class="badge">CPR Certified</span>
+			<span class="badge">Infant Qualified</span>
+			<span class="badge">STEM Tutor</span>
+		</div>
+		
+		<div class="sitter-section">
+			<h4>Experience</h4>
+			<ul>
+				<li>📍 NE/SE Portland (10mi radius)</li>
+				<li>👶 Ages: 0 - 12 years</li>
+			</ul>
+		</div>
+	
+		<div class="sitter-section">
+			<h4>Rates per hour</h4>
+			<div class="price-tier">
+				<span class="label">Active Developmental Care</span>
+				<span class="amount">$35</span>
+			</div>
+			<div class="price-tier">
+				<span class="label">Evening Monitoring (Asleep)</span>
+				<span class="amount">$25</span>
+			</div>
+			<div class="price-tier">
+				<span class="label">Pet Care Add-on</span>
+				<span class="amount">+$5</span>
+			</div>
+		</div>
+	</div>
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
                     <img src="images/sierra.jpg" alt="Sierra" class="w-full h-64 object-cover" style="object-position: 50% 25%;">
                     <div class="p-6">
