@@ -153,6 +153,28 @@
 			padding: 2px 8px;
 			border-radius: 4px;
 		}
+		/* Preferences Styling */
+		.pref-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+			margin-top: 10px;
+		}
+		
+		.pref-item {
+			display: flex;
+			align-items: center;
+			font-size: 0.85rem;
+			color: #4a5568;
+			background: #f8fafc;
+			padding: 8px;
+			border-radius: 8px;
+		}
+		
+		.pref-icon {
+			margin-right: 8px;
+			font-size: 1.1rem;
+		}
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-purple-100">
@@ -207,10 +229,10 @@
 
 			<div class="sitter-card">
 				<div class="sitter-header">
-					<img src="images/jenny.jpg" alt="Dr. Jenny Eng" class="sitter-photo">
+					<img src="YOUR_PHOTO_URL.jpg" alt="Dr. Jenny Eng" class="sitter-photo">
 					<div>
 						<h3 style="margin:0; color:#1a202c;">Dr. Jenny Eng, PhD</h3>
-						<p style="margin:0; font-size: 0.85rem; color:#6b7280;">Cancer Researcher</p>
+						<p style="margin:0; font-size: 0.85rem; color:#6b7280;">Postdoctoral Researcher</p>
 					</div>
 				</div>
 			
@@ -223,22 +245,43 @@
 			
 					<div class="sitter-section">
 						<h4>About Me</h4>
-						<p style="font-size: 0.95rem; line-height: 1.5; color: #4a5568;">
-							By day, I am a researcher focused on high-impact discovery. I bring that same discipline to childcare, offering a "Scholar-Sitter" experience that blends academic mentorship with attentive, high-level care.
+						<p style="font-size: 0.9rem; line-height: 1.5; color: #4a5568; margin-bottom: 0;">
+							Focused on academic mentorship and high-level care. I provide a structured environment where curiosity and safety are the top priorities.
 						</p>
 					</div>
 			
 					<div class="sitter-section">
+						<h4>Preferences</h4>
+						<div class="pref-grid">
+							<div class="pref-item">
+								<span class="pref-icon">👶</span>
+								<span><strong>Ages:</strong> 0 - 12 yrs</span>
+							</div>
+							<div class="pref-item">
+								<span class="pref-icon">🚗</span>
+								<span><strong>Distance:</strong> < 10 miles</span>
+							</div>
+							<div class="pref-item">
+								<span class="pref-icon">📍</span>
+								<span><strong>Area:</strong> NE/SE PDX</span>
+							</div>
+							<div class="pref-item">
+								<span class="pref-icon">⏳</span>
+								<span><strong>Min:</strong> 3 Hours</span>
+							</div>
+						</div>
+					</div>
+			
+					<div class="sitter-section">
 						<h4>Rate Tiers</h4>
-						<div class="price-tier"><span class="label">Active Care</span><span class="amount">$25/hr</span></div>
-						<div class="price-tier"><span class="label">Evening (Post-Bedtime)</span><span class="amount">$15/hr</span></div>
-						<div class="price-tier"><span class="label">Pet Care</span><span class="amount">$15/hr</span></div>
+						<div class="price-tier"><span class="label">Active Care</span><span class="amount">$35/hr</span></div>
+						<div class="price-tier"><span class="label">Evening Monitoring</span><span class="amount">$25/hr</span></div>
 					</div>
 			
 					<div class="sitter-section">
 						<h4>Parent Reviews</h4>
 						<div class="review-box">
-							"Jenny is incredible. She didn't just watch our kids; she taught them about a biology project. Truly the most qualified sitter we've ever had."
+							"Jenny is incredible. She didn't just watch our kids; she taught them about a biology project."
 							<span class="reviewer-name">— Sarah M., NE Portland</span>
 						</div>
 					</div>
