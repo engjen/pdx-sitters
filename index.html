@@ -56,37 +56,62 @@
 		/* Individual Sitter Card */
 		.sitter-card {
 			background: white;
-			border: 1px solid #e1e4e8;
-			border-radius: 12px;
-			width: 320px;
+			border-radius: 16px;
+			overflow: hidden;
+			border: 1px solid #f0f0f0;
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			max-width: 400px;
+		}
+		
+		/* Photo Area */
+		.sitter-header {
+			display: flex;
+			align-items: center;
 			padding: 20px;
-			box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-			transition: transform 0.2s;
+			background: #fafafa;
 		}
 		
-		.sitter-card:hover {
-			transform: translateY(-5px);
+		.sitter-photo {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 3px solid #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+			margin-right: 15px;
+		}
+
+		/* Review Section */
+		.review-box {
+			background: #fdf2ff;
+			border-left: 4px solid #a855f7;
+			padding: 12px;
+			margin-top: 15px;
+			font-style: italic;
+			font-size: 0.9rem;
 		}
 		
-		/* Header & Badges */
-		.sitter-card h3 {
-			margin: 0 0 10px 0;
-			color: #2c3e50;
-			font-size: 1.4rem;
-		}
-		
-		.badge {
-			display: inline-block;
-			background: #e8f4fd;
-			color: #2b6cb0;
-			font-size: 0.75rem;
+		.reviewer-name {
+			display: block;
+			margin-top: 5px;
 			font-weight: bold;
-			padding: 4px 10px;
-			border-radius: 20px;
-			margin-right: 5px;
-			margin-bottom: 10px;
+			font-style: normal;
+			font-size: 0.8rem;
+			color: #6b21a8;
 		}
 		
+		/* Keep your Purple Badges */
+		.badge-purple {
+			display: inline-block;
+			background-color: #f3e8ff; /* purple-100 */
+			color: #7e22ce; /* purple-700 */
+			padding: 0.25rem 0.75rem;
+			border-radius: 9999px;
+			font-size: 0.875rem;
+			margin-right: 5px;
+			margin-bottom: 5px;
+		}
+				
 		/* Sections */
 		.sitter-section {
 			margin-top: 15px;
@@ -180,39 +205,45 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Trusted Sitters</h2>
 
-            <div class="sitter-card">
-		<h3>Dr. Jenny Eng, PhD</h3>
-		<div class="sitter-badges">
-			<span class="badge">CPR Certified</span>
-			<span class="badge">Infant Qualified</span>
-			<span class="badge">STEM Tutor</span>
-		</div>
-		
-		<div class="sitter-section">
-			<h4>Experience & Preferences</h4>
-			<ul>
-				<li>👶 Ages: 0 - 12 years</li>
-				<li>📍 NE/SE Portland (10mi radius)</li>
-
-			</ul>
-		</div>
-	
-		<div class="sitter-section">
-			<h4>Rates per hour</h4>
-			<div class="price-tier">
-				<span class="label">Active Care</span>
-				<span class="amount">$20</span>
+			<div class="sitter-card">
+				<div class="sitter-header">
+					<img src="images/jenny.jpg" alt="Dr. Jenny Eng" class="sitter-photo">
+					<div>
+						<h3 style="margin:0; color:#1a202c;">Dr. Jenny Eng, PhD</h3>
+						<p style="margin:0; font-size: 0.85rem; color:#6b7280;">Cancer Researcher</p>
+					</div>
+				</div>
+			
+				<div style="padding: 20px;">
+					<div class="mb-4">
+						<span class="badge-purple">CPR Certified</span>
+						<span class="badge-purple">STEM Tutoring</span>
+						<span class="badge-purple">Infant Qualified</span>
+					</div>
+			
+					<div class="sitter-section">
+						<h4>About Me</h4>
+						<p style="font-size: 0.95rem; line-height: 1.5; color: #4a5568;">
+							By day, I am a researcher focused on high-impact discovery. I bring that same discipline to childcare, offering a "Scholar-Sitter" experience that blends academic mentorship with attentive, high-level care.
+						</p>
+					</div>
+			
+					<div class="sitter-section">
+						<h4>Rate Tiers</h4>
+						<div class="price-tier"><span class="label">Active Care</span><span class="amount">$25/hr</span></div>
+						<div class="price-tier"><span class="label">Evening (Post-Bedtime)</span><span class="amount">$15/hr</span></div>
+						<div class="price-tier"><span class="label">Pet Care</span><span class="amount">$15/hr</span></div>
+					</div>
+			
+					<div class="sitter-section">
+						<h4>Parent Reviews</h4>
+						<div class="review-box">
+							"Jenny is incredible. She didn't just watch our kids; she taught them about a biology project. Truly the most qualified sitter we've ever had."
+							<span class="reviewer-name">— Sarah M., NE Portland</span>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="price-tier">
-				<span class="label">Evening (Post-Bedtime)</span>
-				<span class="amount">$15</span>
-			</div>
-			<div class="price-tier">
-				<span class="label">Pet Care</span>
-				<span class="amount">$15</span>
-			</div>
-		</div>
-	</div>
           <!--      <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
                     <img src="images/sierra.jpg" alt="Sierra" class="w-full h-64 object-cover" style="object-position: 50% 25%;">
                     <div class="p-6">
