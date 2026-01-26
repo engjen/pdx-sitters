@@ -185,7 +185,7 @@
                         <div class="sitter-section">
 							<h4>About Me</h4>
 							<p class="text-sm leading-relaxed text-gray-600">
-								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+								15-year old sophomore, Jefferson Dancer and 4.0 student. Currently raising money for her Jefferson Dancers spring trip to NYC. Big sister experienced with babies and toddlers. Loves dogs and cats.
 							</p>
 						</div>
                         <div class="sitter-section">
@@ -197,16 +197,15 @@
                 </div>
 
                 <div class="sitter-card">
-                    <!-- ><img src="images/franka.jpg" alt="Franka" class="sitter-hero-img"> -->
+                    <img src="images/franka.png" alt="Franka" class="sitter-hero-img"> 
                     <div class="sitter-content">
                         <h3 class="text-xl font-bold text-gray-800">Franka M</h3>
                         <p class="text-sm text-purple-600 mb-2">Soccer Specialist</p>
                         <div class="flex items-center mb-4">
                             <span class="stars">★★★★★</span>
-                            <span class="ml-2 text-xs text-gray-500">(8 reviews)</span>
+                            <span class="ml-2 text-xs text-gray-500">(2 reviews)</span>
                         </div>
                         <div class="mb-4">
-                            <span class="badge-purple">First Aid</span>
                             <span class="badge-purple">CPR Certified</span>
                             <span class="badge-purple">Pet Friendly</span>
                         </div>
@@ -214,7 +213,7 @@
                             <h4>Preferences</h4>
                             <div class="pref-grid">
                                 <div class="pref-item">👶 3-12 yrs</div>
-                                <div class="pref-item">🚗 &lt; 1 mi</div>
+                                <div class="pref-item">🚗 &lt; 2 mi</div>
                                 <div class="pref-item">📍 NE PDX</div>
                                 <div class="pref-item">⏳ 2hr Min</div>
                             </div>
@@ -222,7 +221,7 @@
                         <div class="sitter-section">
 							<h4>About Me</h4>
 							<p class="text-sm leading-relaxed text-gray-600">
-								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+								I am Red Cross certified and experienced with children. 
 							</p>
 						</div>
                         <div class="sitter-section">
@@ -243,7 +242,7 @@
                             <span class="ml-2 text-xs text-gray-500">(2 reviews)</span>
                         </div>
                         <div class="mb-4">
-                            <span class="badge-purple">STEM Tutor</span>
+                            <span class="badge-purple">Software Solutions for Small Businesses</span>
                             <span class="badge-purple">Infants</span>
                         </div>
                         <div class="sitter-section">
@@ -258,11 +257,12 @@
                         <div class="sitter-section">
 							<h4>About Me</h4>
 							<p class="text-sm leading-relaxed text-gray-600">
-								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+								Mother of 3 with 15+ years experience. Loves baking, gardening and singing songs. Also a developer who created this website with free and open source tools. Available evenings.
 							</p>
 						</div>
                         <div class="sitter-section">
                             <h4>Rates</h4>
+                            <div class="price-tier"><span>Consulting</span><span class="amount">$25/hr</span></div>
                             <div class="price-tier"><span>Active Care</span><span class="amount">$25/hr</span></div>
                             <div class="price-tier"><span>Evening (After Bedtime)</span><span class="amount">$15/hr</span></div>
                         </div>
@@ -289,7 +289,7 @@
 					<div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
 						<label class="flex items-center cursor-pointer">
 							<input type="checkbox" id="petCareCheck" class="w-5 h-5 text-purple-600 rounded" onchange="togglePetCare()">
-							<span class="ml-3 font-bold text-blue-800 text-sm">Add Pet Care / House Sitting? (+$5/hr)</span>
+							<span class="ml-3 font-bold text-blue-800 text-sm">Add Pet Care / House Sitting? </span>
 						</label>
 					
 						<div id="petCareOptions" class="hidden mt-4 space-y-4 pt-4 border-t border-blue-200">
@@ -346,52 +346,64 @@
     </footer>
 
     <script>
-        const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
-        
+		const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
+		
 		function togglePetCare() {
 			const options = document.getElementById('petCareOptions');
 			const isChecked = document.getElementById('petCareCheck').checked;
-			options.style.display = isChecked ? 'block' : 'none';
+			// We use Tailwind's 'hidden' class removal or display block
+			if (isChecked) {
+				options.classList.remove('hidden');
+				options.style.display = 'block';
+			} else {
+				options.classList.add('hidden');
+				options.style.display = 'none';
+			}
 		}
-        async function submitBooking() {
-            const petCareActive = document.getElementById('petCareCheck').checked;
-            const sitter = document.getElementById('sitter').value;
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const date = document.getElementById('date').value;
-            const startTime = document.getElementById('startTime').value;
-            const endTime = document.getElementById('endTime').value;
-            const notes = document.getElementById('notes').value;
-	        // Pet Care specific
-			const petCare: petCareActive,
-			const petDates: petCareActive ? `${document.getElementById('petStartDate').value} to ${document.getElementById('petEndDate').value}` : null,
-			const petHoursPerDay: petCareActive ? document.getElementById('petHours').value : null
-            if (!sitter || !name || !email || !date || !startTime || !endTime) {
-                alert('Please fill in all required fields');
-                return;
-            }
+		async function submitBooking() {
+			const sitter = document.getElementById('sitter').value;
+			const name = document.getElementById('name').value;
+			const email = document.getElementById('email').value;
+			const date = document.getElementById('date').value;
+			const startTime = document.getElementById('startTime').value;
+			const endTime = document.getElementById('endTime').value;
+			const notes = document.getElementById('notes').value;
+		
+			// Fixed the syntax errors here (using equals instead of colons)
+			const petCareActive = document.getElementById('petCareCheck').checked;
+			const petDates = petCareActive ? `${document.getElementById('petStartDate').value} to ${document.getElementById('petEndDate').value}` : "N/A";
+			const petHoursPerDay = petCareActive ? document.getElementById('petHours').value : "N/A";
+		
+			if (!sitter || !name || !email || !date || !startTime || !endTime) {
+				alert('Please fill in all required fields');
+				return;
+			}
+		
+			document.getElementById('loading-overlay').style.display = 'flex';
+		
+			try {
+				const response = await fetch(`${API_URL}/bookings`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ 
+						sitter, name, email, date, startTime, endTime, notes,
+						petCareActive, petDates, petHoursPerDay // Added these to the payload
+					})
+				});
+		
+				if (response.ok) {
+					alert(✅ Request submitted! A confirmation email is on its way—if you don't see it, please check your spam and mark us as safe. Your appointment will appear on the calendar shortly.");
+					location.reload(); 
+				} else {
+					alert('❌ Connection issue. Please try again.');
+				}
+			} catch (error) {
+				alert('❌ Server is sleeping. Try again in 1 minute.');
+			} finally {
+				document.getElementById('loading-overlay').style.display = 'none';
+			}
+		}
 
-            document.getElementById('loading-overlay').style.display = 'flex';
-
-            try {
-                const response = await fetch(`${API_URL}/bookings`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ sitter, name, email, date, startTime, endTime, notes })
-                });
-
-                if (response.ok) {
-                    alert("✅ Request submitted! A confirmation email is on its way—if you don't see it, please check your spam and mark us as safe. Your appointment will appear on the calendar shortly.");
-                    location.reload(); 
-                } else {
-                    alert('❌ Connection issue. Please try again.');
-                }
-            } catch (error) {
-                alert('❌ Server is sleeping. Try again in 1 minute.');
-            } finally {
-                document.getElementById('loading-overlay').style.display = 'none';
-            }
-        }
     </script>
 </body>
 </html>
