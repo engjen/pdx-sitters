@@ -286,7 +286,29 @@
                             <option value="Jenny Eng">Jenny Eng, PhD</option>
                         </select>
                     </div>
-
+					<div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+						<label class="flex items-center cursor-pointer">
+							<input type="checkbox" id="petCareCheck" class="w-5 h-5 text-purple-600 rounded" onchange="togglePetCare()">
+							<span class="ml-3 font-bold text-blue-800 text-sm">Add Pet Care / House Sitting? (+$5/hr)</span>
+						</label>
+					
+						<div id="petCareOptions" class="hidden mt-4 space-y-4 pt-4 border-t border-blue-200">
+							<div class="grid md:grid-cols-2 gap-4">
+								<div>
+									<label class="block text-xs font-bold text-gray-500 mb-1">Pet Care Start Date</label>
+									<input type="date" id="petStartDate" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm">
+								</div>
+								<div>
+									<label class="block text-xs font-bold text-gray-500 mb-1">Pet Care End Date</label>
+									<input type="date" id="petEndDate" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm">
+								</div>
+							</div>
+							<div>
+								<label class="block text-xs font-bold text-gray-500 mb-1">Estimated Hours of Care Per Day</label>
+								<input type="number" id="petHours" placeholder="e.g. 2" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm">
+							</div>
+						</div>
+					</div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <input type="text" id="name" placeholder="Full Name" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl">
                         <input type="email" id="email" placeholder="Email Address" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl">
@@ -325,8 +347,14 @@
 
     <script>
         const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
-
+        
+		function togglePetCare() {
+			const options = document.getElementById('petCareOptions');
+			const isChecked = document.getElementById('petCareCheck').checked;
+			options.style.display = isChecked ? 'block' : 'none';
+		}
         async function submitBooking() {
+            const petCareActive = document.getElementById('petCareCheck').checked;
             const sitter = document.getElementById('sitter').value;
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -334,7 +362,10 @@
             const startTime = document.getElementById('startTime').value;
             const endTime = document.getElementById('endTime').value;
             const notes = document.getElementById('notes').value;
-
+	        // Pet Care specific
+			const petCare: petCareActive,
+			const petDates: petCareActive ? `${document.getElementById('petStartDate').value} to ${document.getElementById('petEndDate').value}` : null,
+			const petHoursPerDay: petCareActive ? document.getElementById('petHours').value : null
             if (!sitter || !name || !email || !date || !startTime || !endTime) {
                 alert('Please fill in all required fields');
                 return;
