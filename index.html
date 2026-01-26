@@ -144,7 +144,7 @@
 			</p>
 		
 			<div class="flex justify-center">
-			  <a href="#booking-form" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
+			  <a href="#book" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
 				Find Your Sitter
 			  </a>
 			</div>
@@ -162,11 +162,11 @@
                 <div class="sitter-card">
                     <img src="images/sierra.jpg" alt="Sierra" class="sitter-hero-img">
                     <div class="sitter-content">
-                        <h3 class="text-xl font-bold text-gray-800">Sierra Miller</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Sierra M</h3>
                         <p class="text-sm text-purple-600 mb-2">Dance Education Expert</p>
                         <div class="flex items-center mb-4">
                             <span class="stars">★★★★★</span>
-                            <span class="ml-2 text-xs text-gray-500">(15 reviews)</span>
+                            <span class="ml-2 text-xs text-gray-500">(2 reviews)</span>
                         </div>
                         <div class="mb-4">
                             <span class="badge-purple">CPR Certified</span>
@@ -183,6 +183,12 @@
                             </div>
                         </div>
                         <div class="sitter-section">
+							<h4>About Me</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+							</p>
+						</div>
+                        <div class="sitter-section">
                             <h4>Rates</h4>
                             <div class="price-tier"><span>Active Care</span><span class="amount">$12-18/hr</span></div>
                             <div class="price-tier"><span>Evening (After Bedtime)</span><span class="amount">$10/hr</span></div>
@@ -191,9 +197,9 @@
                 </div>
 
                 <div class="sitter-card">
-                    <img src="images/franka.jpg" alt="Franka" class="sitter-hero-img">
+                    <!-- ><img src="images/franka.jpg" alt="Franka" class="sitter-hero-img"> -->
                     <div class="sitter-content">
-                        <h3 class="text-xl font-bold text-gray-800">Franka</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Franka M</h3>
                         <p class="text-sm text-purple-600 mb-2">Soccer Specialist</p>
                         <div class="flex items-center mb-4">
                             <span class="stars">★★★★★</span>
@@ -214,6 +220,12 @@
                             </div>
                         </div>
                         <div class="sitter-section">
+							<h4>About Me</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+							</p>
+						</div>
+                        <div class="sitter-section">
                             <h4>Rates</h4>
                             <div class="price-tier"><span>Active Care</span><span class="amount">$12-15/hr</span></div>
                             <div class="price-tier"><span>Evening (After Bedtime)</span><span class="amount">$12/hr</span></div>
@@ -224,7 +236,7 @@
                 <div class="sitter-card">
                     <img src="images/jenny.jpg" alt="Jenny" class="sitter-hero-img">
                     <div class="sitter-content">
-                        <h3 class="text-xl font-bold text-gray-800">Dr. Jenny Eng, PhD</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Jenny Eng, PhD</h3>
                         <p class="text-sm text-purple-600 mb-2">Cancer Researcher and Entrepreneur</p>
                         <div class="flex items-center mb-4">
                             <span class="stars">★★★★★</span>
@@ -244,6 +256,12 @@
                             </div>
                         </div>
                         <div class="sitter-section">
+							<h4>About Me</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								As a researcher, I bring a structured and intellectually engaging approach to care. I love fostering curiosity in children through STEM play and creative projects, ensuring a safe and enriching environment.
+							</p>
+						</div>
+                        <div class="sitter-section">
                             <h4>Rates</h4>
                             <div class="price-tier"><span>Active Care</span><span class="amount">$25/hr</span></div>
                             <div class="price-tier"><span>Evening (After Bedtime)</span><span class="amount">$15/hr</span></div>
@@ -262,10 +280,10 @@
                     <div>
                         <label class="block text-sm font-bold text-gray-700 mb-2">Select Sitter *</label>
                         <select id="sitter" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 outline-none">
-                            <option value="">Choose your specialist...</option>
-                            <option value="Jenny Eng">Dr. Jenny Eng, PhD</option>
-                            <option value="Sierra Miller">Sierra Miller</option>
-                            <option value="Elliot Gray">Elliot Gray</option>
+                            <option value="">Choose a sitter...</option>
+                            <option value="Sierra M">Sierra M</option>
+                            <option value="Franka M">Franka M</option>
+                            <option value="Jenny Eng">Jenny Eng, PhD</option>
                         </select>
                     </div>
 
@@ -280,7 +298,7 @@
                         <input type="time" id="endTime" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl">
                     </div>
 
-                    <textarea id="notes" rows="4" placeholder="Notes (Ages of kids, allergies, etc.)" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl"></textarea>
+                    <textarea id="notes" rows="4" placeholder="Notes (Ages of kids, allergies, describe pet care needed, etc.)" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl"></textarea>
 
                     <button onclick="submitBooking()" class="w-full bg-purple-600 text-white py-5 rounded-2xl text-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-200">
                         Confirm Booking Request
@@ -332,7 +350,7 @@
                 });
 
                 if (response.ok) {
-                    alert("✅ Success! Check your email and the calendar below.");
+                    alert("✅ Request submitted! A confirmation email is on its way—if you don't see it, please check your spam and mark us as safe. Your appointment will appear on the calendar shortly.");
                     location.reload(); 
                 } else {
                     alert('❌ Connection issue. Please try again.');
