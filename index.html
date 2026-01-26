@@ -105,6 +105,14 @@
             padding: 6px;
             border-radius: 6px;
         }
+        @media (max-width: 768px) {
+			.sitter-card {
+				margin-bottom: 2rem;
+			}
+			.sitter-hero-img {
+				height: 200px; /* Slightly shorter images on mobile to save space */
+			}
+		}
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-purple-100 font-sans">
@@ -117,16 +125,29 @@
         </div>
     </div>
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-purple-600">PDX Sitters</h1>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#sitters" class="text-gray-700 hover:text-purple-600">Sitters</a>
-                <a href="#book" class="text-gray-700 hover:text-purple-600">Book Now</a>
-                <a href="#availability" class="text-gray-700 hover:text-purple-600">Calendar</a>
-            </nav>
-        </div>
-    </header>
+	<header class="bg-white shadow-sm sticky top-0 z-50">
+		<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+			<h1 class="text-2xl font-bold text-purple-600">PDX Sitters</h1>
+			
+			<nav class="hidden md:flex space-x-6 text-sm font-medium">
+				<a href="#sitters" class="text-gray-700 hover:text-purple-600">Sitters</a>
+				<a href="#book" class="text-gray-700 hover:text-purple-600">Book Now</a>
+				<a href="#availability" class="text-gray-700 hover:text-purple-600">Calendar</a>
+			</nav>
+	
+			<button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-600 focus:outline-none">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+				</svg>
+			</button>
+		</div>
+	
+		<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-4 shadow-lg">
+			<a href="#sitters" onclick="toggleMobileMenu()" class="block text-gray-700 font-medium hover:text-purple-600">Sitters</a>
+			<a href="#book" onclick="toggleMobileMenu()" class="block text-gray-700 font-medium hover:text-purple-600">Book Now</a>
+			<a href="#availability" onclick="toggleMobileMenu()" class="block text-gray-700 font-medium hover:text-purple-600">Calendar</a>
+		</div>
+	</header>
 
    <section id="home" class="py-20 text-center">
 		<section class="relative py-16 px-4 bg-gradient-to-b from-purple-50 to-white">
@@ -352,7 +373,14 @@
 
     <script>
 		const API_URL = 'https://pdx-sitters-backend.onrender.com/api';
-		
+		function toggleMobileMenu() {
+			const menu = document.getElementById('mobile-menu');
+			if (menu.classList.contains('hidden')) {
+				menu.classList.remove('hidden');
+			} else {
+				menu.classList.add('hidden');
+			}
+        }
 		function togglePetCare() {
 			const options = document.getElementById('petCareOptions');
 			const isChecked = document.getElementById('petCareCheck').checked;
