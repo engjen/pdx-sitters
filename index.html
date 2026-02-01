@@ -176,8 +176,11 @@
 			</p>
 		
 			<div class="flex justify-center">
-			  <a href="#book" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
+			  <a href="#sitters" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
 				Find Your Sitter
+			  </a>
+			  <a href="#book" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
+				Book Your Sitter
 			  </a>
 			</div>
 		
@@ -203,9 +206,16 @@
                         <div class="mb-4">
                             <span class="badge-purple">Infants</span>
                             <span class="badge-purple">Kids</span>
+                            <span class="badge-purple">OHSU OnTrack CPR</span>
                             <span class="badge-purple">Dog Sitting</span>
                             <span class="badge-purple">Cat Sitting</span>
                         </div>
+                        <div class="sitter-section">
+							<h4>Availability</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								Friday and Saturday evenings, Sunday mornings and PPS school holidays.
+							</p>
+						</div>
                         <div class="sitter-section">
                             <h4>Preferences</h4>
                             <div class="pref-grid">
@@ -244,6 +254,12 @@
 							<span class="badge-purple">Kids</span>
                         </div>
                         <div class="sitter-section">
+							<h4>Availability</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								Friday and Saturday evenings, Sunday mornings and PPS school holidays.
+							</p>
+						</div>
+                        <div class="sitter-section">
                             <h4>Preferences</h4>
                             <div class="pref-grid">
                                 <div class="pref-item">👶 4-12 yrs</div>
@@ -281,6 +297,12 @@
                             <span class="badge-purple">Kids</span>
                         </div>
                         <div class="sitter-section">
+							<h4>Availability</h4>
+							<p class="text-sm leading-relaxed text-gray-600">
+								Weekday evenings 6:30 - 9 pm.
+							</p>
+						</div>
+                        <div class="sitter-section">
                             <h4>Preferences</h4>
                             <div class="pref-grid">
                                 <div class="pref-item">👶 0-12 yrs</div>
@@ -297,8 +319,8 @@
 						</div>
                         <div class="sitter-section">
                             <h4>Rates</h4>
-                            <div class="price-tier"><span>Web Development Consulting</span><span class="amount">$35/hr</span></div>
-                            <div class="price-tier"><span>Active Care</span><span class="amount">$25/hr</span></div>
+                            <div class="price-tier"><span>Web Development Consulting</span><span class="amount">$60/hr</span></div>
+                            <div class="price-tier"><span>Child Care</span><span class="amount">$25/hr</span></div>
                             <div class="price-tier"><span>Evening (After Bedtime)</span><span class="amount">$15/hr</span></div>
                         </div>
                     </div>
@@ -324,7 +346,7 @@
 					<div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
 						<label class="flex items-center cursor-pointer">
 							<input type="checkbox" id="petCareCheck" class="w-5 h-5 text-purple-600 rounded" onchange="togglePetCare()">
-							<span class="ml-3 font-bold text-blue-800 text-sm">Book Pet Care? </span>
+							<span class="ml-3 font-bold text-blue-800 text-sm">Check this for Pet Care Options</span>
 						</label>
 					
 						<div id="petCareOptions" class="hidden mt-4 space-y-4 pt-4 border-t border-blue-200">
@@ -357,7 +379,7 @@
                         <input type="time" id="endTime" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl">
                     </div>
 
-                    <textarea id="notes" rows="4" placeholder="Notes (Ages of kids, allergies, describe pet care needed, etc.)" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl"></textarea>
+                    <textarea id="notes" rows="4" placeholder="Notes (Ages of kids, describe pet care needed, etc.) See our Privacy & Security statment, below." class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl"></textarea>
 
                     <button onclick="submitBooking()" class="w-full bg-purple-600 text-white py-5 rounded-2xl text-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-200">
                         Confirm Booking Request
@@ -369,7 +391,7 @@
 
     <section id="availability" class="py-20 px-4 bg-white">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Live Availability</h2>
+            <h2 class="text-3xl font-bold text-center mb-8">PDX Sitters Calendar</h2>
             <div class="rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                 <iframe src="https://calendar.google.com/calendar/embed?src=995582372dc3b5d31797864a98cdf4ee888334685d072974f3a560c3adb84431@group.calendar.google.com&ctz=America/Los_Angeles&mode=WEEK" 
                         style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
@@ -380,6 +402,43 @@
     <footer class="bg-gray-900 text-gray-400 py-12 text-center">
         <p class="font-bold text-white mb-2">PDX Sitters</p>
         <p class="text-sm">&copy; 2026 Premium Childcare & Pet Care. Portland, OR.</p>
+    <div class="text-center pb-8">
+    <button onclick="togglePrivacy()" class="text-xs text-gray-400 hover:text-purple-600 underline transition-colors">
+        Privacy & Data Security Policy
+    </button>
+</div>
+
+<div id="privacy-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 shadow-2xl relative">
+        <button onclick="togglePrivacy()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <span class="mr-2">🛡️</span> Privacy & Security
+        </h2>
+
+        <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+            <p class="font-bold text-gray-800">Your trust is our priority.</p>
+            <p>At PDX Sitters, we collect only the necessary details to facilitate your booking (Name, Email, Phone, and Care Notes). We do not sell, rent, or trade your personal data with third parties.</p>
+            
+            <h3 class="font-bold text-gray-800 pt-2">Database Security</h3>
+            <p>Our platform uses <strong>MongoDB Atlas</strong>, an industry-standard cloud database. Your data is protected by:</p>
+            <ul class="list-disc pl-5 space-y-1">
+                <li><strong>Encryption at Rest:</strong> Data is encrypted while stored on our servers.</li>
+                <li><strong>Encryption in Transit:</strong> All data sent between your browser and our server uses TLS/SSL (HTTPS) encryption.</li>
+                <li><strong>Network Isolation:</strong> Only our authorized backend server can access the database; it is invisible to the public internet.</li>
+            </ul>
+
+            <h3 class="font-bold text-gray-800 pt-2">Data Retention</h3>
+            <p>We keep booking records to help manage your future requests and for internal accounting. If you wish for your data to be deleted, please contact us directly.</p>
+        </div>
+
+        <button onclick="togglePrivacy()" class="mt-8 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-3 rounded-xl transition-colors">
+            Close
+        </button>
+    </div>
+</div>
     </footer>
 
     <script>

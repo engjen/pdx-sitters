@@ -4,3 +4,5 @@ __pycache__/
 .env
 app.py
 .DS_Store
+images/franka.png
+old sitter cards.html
