@@ -175,13 +175,14 @@
 			  instant booking that fits your schedule.
 			</p>
 		
-			<div class="flex justify-center">
-			  <a href="#sitters" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
-				Find Your Sitter
-			  </a>
-			  <a href="#book" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-base font-bold rounded-full shadow-md transition-all">
-				Book Your Sitter
-			  </a>
+			<div class="flex flex-col sm:flex-row justify-center gap-4 px-4">
+				<a href="#sitters" class="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-purple-200 transition-all text-center">
+					Find Your Sitter
+				</a>
+				
+				<a href="#book" class="px-8 py-4 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 text-lg font-bold rounded-full transition-all text-center">
+					Book Now
+				</a>
 			</div>
 		
 		  </div>
@@ -346,7 +347,7 @@
 					<div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
 						<label class="flex items-center cursor-pointer">
 							<input type="checkbox" id="petCareCheck" class="w-5 h-5 text-purple-600 rounded" onchange="togglePetCare()">
-							<span class="ml-3 font-bold text-blue-800 text-sm">Check this for Pet Care Options</span>
+							<span class="ml-3 font-bold text-blue-800 text-sm">Check for Pet Care Options</span>
 						</label>
 					
 						<div id="petCareOptions" class="hidden mt-4 space-y-4 pt-4 border-t border-blue-200">
@@ -451,6 +452,17 @@
 				menu.classList.add('hidden');
 			}
         }
+        function togglePrivacy() {
+			const modal = document.getElementById('privacy-modal');
+			modal.classList.toggle('hidden');
+			
+			// Prevent scrolling when modal is open
+			if (!modal.classList.contains('hidden')) {
+				document.body.style.overflow = 'hidden';
+			} else {
+				document.body.style.overflow = 'auto';
+			}
+		}
 		function togglePetCare() {
 			const options = document.getElementById('petCareOptions');
 			const isChecked = document.getElementById('petCareCheck').checked;
